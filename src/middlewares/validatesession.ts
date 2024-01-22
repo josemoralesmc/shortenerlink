@@ -8,7 +8,7 @@ export  const validateSession = (req: Request, res: Response, next: NextFunction
         const newToken = refreshToken(token);
         if (newToken) {
           res.cookie("Token", token, { 
-            domain: 'shortfront.onrender.com',
+            domain: 'https://shortfront.onrender.com',
             sameSite: 'none', // Agrega la directiva SameSite
             secure: true, // Agrega la directiva Secure
           });

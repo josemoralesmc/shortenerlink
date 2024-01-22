@@ -20,7 +20,7 @@ export class UserController {
       console.log(token);
       
       res.cookie("Token", token, { 
-        domain: '.shortfront.onrender.com',
+        domain: 'shortfront.onrender.com/',
         sameSite: 'none', // Agrega la directiva SameSite
         secure: true,
       });

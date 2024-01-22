@@ -5,8 +5,10 @@ import routerSession from './routes/session.routes'
 import setUpEnviroment from '../database/index'
 import cookieParser from 'cookie-parser'
 import cors from 'cors';
+import morgan from 'morgan'
 import { runMongo } from "../database/mongo";
 const app = express();
+app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false })); 
 app.use(cookieParser());

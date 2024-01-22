@@ -9,8 +9,7 @@ const validateSession = (req, res, next) => {
         const newToken = (0, jwt_1.refreshToken)(token);
         if (newToken) {
             res.cookie("Token", token, {
-                domain: 'shortfront.onrender.com',
-                path: '/',
+                domain: '.shortfront.onrender.com',
                 sameSite: 'none', // Agrega la directiva SameSite
                 secure: true, // Agrega la directiva Secure
             });

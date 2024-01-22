@@ -27,12 +27,6 @@ class UserController {
                     return res.json("Contraseña incorrecta");
                 }
                 const token = (0, jwt_1.generateToken)(mail, id);
-                console.log(token);
-                res.cookie("Token", token, {
-                    domain: 'shortfront.onrender.com/',
-                    sameSite: 'none', // Agrega la directiva SameSite
-                    secure: true,
-                });
                 return res.json({ success: true, message: "Login successes", data: token, });
             }
             catch (error) {

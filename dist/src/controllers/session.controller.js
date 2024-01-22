@@ -29,10 +29,9 @@ class UserController {
                 const token = (0, jwt_1.generateToken)(mail, id);
                 console.log(token);
                 res.cookie("Token", token, {
-                    httpOnly: true,
                     domain: 'short-url-v1h4.onrender.com',
-                    sameSite: 'lax', // Agrega la directiva SameSite
-                    secure: true, // Agrega la directiva Secure
+                    sameSite: 'none', // Agrega la directiva SameSite
+                    secure: true,
                 });
                 return res.json({ success: true, message: "Login successes", data: token, });
             }

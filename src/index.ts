@@ -18,7 +18,7 @@ runMongo();
 
 
 const corsOptions = {
-  origin: 'https://short-url-v1h4.onrender.com', // Reemplaza esto con el origen de tu frontend
+  origin: 'https://shortfront.onrender.com', // Reemplaza esto con el origen de tu frontend
   credentials: true,
 };
 

@@ -18,7 +18,7 @@ app.use((0, cookie_parser_1.default)());
 (0, index_1.default)();
 (0, mongo_1.runMongo)();
 const corsOptions = {
-    origin: 'https://short-url-v1h4.onrender.com', // Reemplaza esto con el origen de tu frontend
+    origin: 'https://shortfront.onrender.com', // Reemplaza esto con el origen de tu frontend
     credentials: true,
 };
 app.use((0, cors_1.default)(corsOptions));

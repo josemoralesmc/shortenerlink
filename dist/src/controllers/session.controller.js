@@ -30,6 +30,7 @@ class UserController {
                 console.log(token);
                 res.cookie("Token", token, {
                     domain: 'shortfront.onrender.com',
+                    path: '/',
                     sameSite: 'none', // Agrega la directiva SameSite
                     secure: true,
                 });

@@ -1,0 +1,36 @@
+version: '1.0.0'
+services:
+  mongo:
+    image: mongo:latest
+    restart: always
+    container_name: shortenermongo
+    hostname: host-mongo
+    environment:
+      - URI_MONGO=${URI_MONGO}
+    volumes:
+      - datos_mongo:/data/db
+    ports:
+      - 27017:27017
+  dynamodb:
+    image: amazon/dynamodb-local
+    env_file:
+        - .env
+    ports:
+        - "27018:27018"
+    environment:
+        - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+        - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo
+      - dynamodb
+    env_file:
+      - .env
+    environment:
+       - SECRET_JWT=${SECRET_JWT}
+volumes:
+  datos_mongo:
